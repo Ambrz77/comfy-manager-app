@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class Server {
     ArrayList<User> users = new ArrayList<>();
-    ArrayList<Task> tasks = new ArrayList<>();
-    ArrayList<Priority> priorities = new ArrayList<>();
 
     public void AddUser(String u, String e, String n, String p, int t) {
         users.add(new User(u, e, n, p, t));
@@ -16,15 +14,11 @@ public class Server {
 
     }
 
-    public void AddPriority(String n, int i) {
-        priorities.add(new Priority(n, i));
-    }
+    public void AddPriority(User u, String n, int i) { u.priorities.add(new Priority(n, i)); }
 
-    public void AddTask(String s, Priority p) {
-        tasks.add(new Task(s, p));
-    }
+    public void AddTask(User u, String s, Priority p) { u.tasks.add(new Task(s, p)); }
 
-    public int isUser(String n) {
+    private int isUser(String n) {
         for (User u:users) {
             if (u.getUsername().equals(n)) {
                 return 1;
@@ -36,7 +30,7 @@ public class Server {
         return 0;
     }
 
-    public User getUser(String n) {
+    private User getUser(String n) {
         for (User u :
                 users) {
             if (u.getEmail().equals(n) || u.getUsername().equals(n)) {
