@@ -2,14 +2,20 @@ package com.example.alireza.taskmanager;
 
 import java.util.ArrayList;
 
+class ExistedUserException extends Exception {
+    public ExistedUserException(String message) {
+        super(message);
+    }
+}
+
 public class Server {
     ArrayList<User> users = new ArrayList<>();
 
-    public void AddUser(String u, String e, String n, String p, int t) {
+    public void Register(String u, String e, String n, String p, int t) {
         users.add(new User(u, e, n, p, t));
     }
 
-    public void AddUser(String u, String e, String n, String p, String f, int t) {
+    public void Register(String u, String e, String n, String p, String f, int t) {
         users.add(new User(u, e, n, p, f, t));
 
     }
@@ -18,7 +24,7 @@ public class Server {
 
     public void AddTask(User u, String s, Priority p) { u.tasks.add(new Task(s, p)); }
 
-    private int isUser(String n) {
+    public int isUser(String n) {
         for (User u:users) {
             if (u.getUsername().equals(n)) {
                 return 1;
