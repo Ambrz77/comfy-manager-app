@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class User {
     private String Username,Email,Password;
     String Name,Familyname;
-    int Type;//Normal/Silver/Gold user
+    int Type;//Normal/Silver/Gold user//1/2/3
     boolean loggedIn = false;
     ArrayList<Task> tasks = new ArrayList<>();
     ArrayList<Priority> priorities = new ArrayList<>();

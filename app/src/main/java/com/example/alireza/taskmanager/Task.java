@@ -19,9 +19,9 @@ public class Task {
         this.min = min;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
+    public void setDetail(String detail) { this.detail = detail; }
+
+    public Priority getPriority() { return priority; }
 
     public int compareTime(Task task) {
         if (year > task.year) {
@@ -61,7 +61,7 @@ public class Task {
 
 class Priority {
     String name;
-    private int importance;
+    private int importance;//1-10
 
     public Priority(String name, int importance) {
         this.name = name;

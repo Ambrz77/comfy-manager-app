@@ -10,13 +10,16 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="222dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="cursive"
         android:text="Register"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -27,155 +30,139 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.016"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/clipboards7" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:id="@+id/passText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="304dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="sans-serif-condensed"
         android:hint="Password*"
         android:inputType="textPassword"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/familyText" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/emailText"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="sans-serif-condensed"
         android:hint="Em@il*"
         android:inputType="textEmailAddress"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userText" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
+        android:id="@+id/userText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="sans-serif-condensed"
         android:hint="Username*"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/nameText"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="sans-serif-condensed"
         android:hint="Name*"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailText" />
 
     <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
+        android:id="@+id/familyText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="sans-serif-condensed"
         android:hint="Family Name"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/NormalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
-        android:layout_marginBottom="188dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:checked="true"
         android:text="Normal User"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passText" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/SilverButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="188dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:text="Silver User"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton3"
-        app:layout_constraintStart_toEndOf="@+id/radioButton" />
+        app:layout_constraintEnd_toStartOf="@+id/GoldButton"
+        app:layout_constraintStart_toEndOf="@+id/NormalButton"
+        app:layout_constraintTop_toBottomOf="@+id/passText" />
 
     <RadioButton
-        android:id="@+id/radioButton3"
+        android:id="@+id/GoldButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="188dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="onRadioButtonClicked"
         android:text="Gold User"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/radioButton2" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
-        android:layout_marginEnd="259dp"
-        android:layout_marginBottom="11dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="User Type:"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/passText" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="Sign Up"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SilverButton" />
 
 </android.support.constraint.ConstraintLayout>
