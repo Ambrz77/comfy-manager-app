@@ -11,6 +11,13 @@ class ExistedUserException extends Exception {
 public class Server {
     ArrayList<User> users = new ArrayList<>();
 
+    public final static boolean isValidEmail(CharSequence target) {
+        if (target == null)
+            return false;
+
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
     public void Register(String u, String e, String n, String p, int t) {
         users.add(new User(u, e, n, p, t));
     }
