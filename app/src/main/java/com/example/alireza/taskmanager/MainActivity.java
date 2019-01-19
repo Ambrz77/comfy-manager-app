@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //Intent for Login Page Test:
-        Intent NewIntent = new Intent(getApplicationContext(), LoginActivity.class);
+        Intent NewIntent = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(NewIntent);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
