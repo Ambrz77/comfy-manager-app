@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -36,11 +37,12 @@ public class RegisterActivity extends AppCompatActivity {
         }
     };
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Button signup = (Button) findViewById(R.id.signup);
         u = findViewById(R.id.userText);
@@ -48,6 +50,34 @@ public class RegisterActivity extends AppCompatActivity {
         n = findViewById(R.id.nameText);
         f = findViewById(R.id.familyText);
         p = findViewById(R.id.passText);
+
+        u.addTextChangedListener(textWatcher);
+        e.addTextChangedListener(textWatcher);
+        n.addTextChangedListener(textWatcher);
+        p.addTextChangedListener(textWatcher);
+
+        textCheck();
+
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                switch (checkedId) {
+                    case R.id.NormalButton:
+                        type=1;
+                        break;
+                    case R.id.SilverButton:
+                        type=2;
+                        break;
+                    case R.id.GoldButton:
+                        type=3;
+                        break;
+                }
+            }
+        });
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                         server.Register(user, email, name, pass, family, type);
                         System.out.println(u + " Registered!");
                         Intent Hintent = new Intent(RegisterActivity.this, HomeActivity.class);
+                        startActivity(Hintent);
                     } else {
                         throw new ExistedUserException(u + " is already registered!");
                     }
@@ -89,24 +120,24 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    public void onRadioButtonClicked(View view) {
-        boolean clicked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.NormalButton:
-                if (clicked) {
-                    type=1;
-                }
-                break;
-            case R.id.SilverButton:
-                if (clicked) {
-                    type=2;
-                }
-                break;
-            case R.id.GoldButton:
-                if (clicked) {
-                    type=3;
-                }
-                break;
-        }
-    }
+//    public void onRadioButtonClicked(View view) {
+//        boolean clicked = ((RadioButton) view).isChecked();
+//        switch (view.getId()) {
+//            case R.id.NormalButton:
+//                if (clicked) {
+//                    type=1;
+//                }
+//                break;
+//            case R.id.SilverButton:
+//                if (clicked) {
+//                    type=2;
+//                }
+//                break;
+//            case R.id.GoldButton:
+//                if (clicked) {
+//                    type=3;
+//                }
+//                break;
+//        }
+//    }
 }

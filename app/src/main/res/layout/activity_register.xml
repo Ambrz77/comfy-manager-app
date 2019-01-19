@@ -116,42 +116,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
-    <RadioButton
-        android:id="@+id/NormalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
         android:layout_marginTop="24dp"
-        android:checked="true"
-        android:text="Normal User"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passText" />
-
-    <RadioButton
-        android:id="@+id/SilverButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:text="Silver User"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/GoldButton"
-        app:layout_constraintStart_toEndOf="@+id/NormalButton"
-        app:layout_constraintTop_toBottomOf="@+id/passText" />
-
-    <RadioButton
-        android:id="@+id/GoldButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="30dp"
-        android:onClick="onRadioButtonClicked"
-        android:text="Gold User"
-        android:textSize="12sp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passText" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passText">
+
+        <RadioButton
+            android:id="@+id/NormalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:checked="true"
+            android:text="Normal User"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="384dp" />
+
+        <RadioButton
+            android:id="@+id/SilverButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Silver User"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/GoldButton"
+            app:layout_constraintStart_toEndOf="@+id/NormalButton"
+            tools:layout_editor_absoluteY="384dp" />
+
+        <RadioButton
+            android:id="@+id/GoldButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:text="Gold User"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="384dp" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/signup"
@@ -164,6 +173,6 @@
         android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SilverButton" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 </android.support.constraint.ConstraintLayout>
