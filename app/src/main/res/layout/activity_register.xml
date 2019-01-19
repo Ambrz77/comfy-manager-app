@@ -30,7 +30,7 @@
         app:srcCompat="@drawable/clipboards7" />
 
     <EditText
-        android:id="@+id/passText"
+        android:id="@+id/passwordText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -119,7 +119,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passText">
+        app:layout_constraintTop_toBottomOf="@+id/passwordText">
 
         <RadioButton
             android:id="@+id/NormalButton"

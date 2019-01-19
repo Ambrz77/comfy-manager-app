@@ -8,6 +8,12 @@ class ExistedUserException extends Exception {
     }
 }
 
+class UnknownUserException extends Exception {
+    public UnknownUserException(String message) {
+        super(message);
+    }
+}
+
 public class Server {
     ArrayList<User> users = new ArrayList<>();
 
@@ -53,7 +59,7 @@ public class Server {
         return null;
     }
 
-    public void login(String ne, String p) {
+    public boolean login(String ne, String p) {
         if (isUser(ne) > 0) {
             User u = getUser(ne);
             if (p.equals(u.getPassword())) {
@@ -62,8 +68,10 @@ public class Server {
             } else {
                 System.out.println("wrong pass!");
             }
+            return u.loggedIn;
         } else {
             System.out.println("this user is not registered!");
+            return false;
         }
     }
 }
