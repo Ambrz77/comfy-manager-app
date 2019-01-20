@@ -17,6 +17,6 @@ public class LoginActivity extends AppCompatActivity {
         //if (Correct data)
         //LoginError.setText(""); ==> No need!
         //else
-        LoginError.setText("Wrong data, Please try again!");
+        //LoginError.setText("Wrong data, Please try again!");
     }
 }
