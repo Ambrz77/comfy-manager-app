@@ -1,8 +1,8 @@
 package com.example.alireza.taskmanager;
 
-public class Task {
+public class Task implements Comparable{
     String subject;
-    int year=0,month=0,day=0,hour=0,min=0;//time
+    int year,month,day,hour,min;//time
     Priority priority;
     String detail;
 
@@ -57,9 +57,20 @@ public class Task {
 
         return 0;
     }
+
+    @Override
+    public int compareTo(Object o) {
+        if (year == 0 && ((Task) o).year == 0) {
+            return priority.compareTo(((Task) o).priority);
+        } else if (year == 0 && ((Task) o).year != 0) {
+            return -1;
+        } else if (year != 0 && ((Task) o).year != 0) {
+            return this.compareTime((Task) o);
+        }else return 1;
+    }
 }
 
-class Priority {
+class Priority implements Comparable{
     String name;
     private int importance;//1-10
 
@@ -68,8 +79,9 @@ class Priority {
         this.importance = importance;
     }
 
-    public int compare(Priority p) {
-        if (importance < p.importance) {
+    @Override
+    public int compareTo(Object o) {
+        if (importance < ((Priority)o).importance) {
             return -1;
         } else {
             return 1;

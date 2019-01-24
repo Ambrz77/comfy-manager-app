@@ -1,6 +1,7 @@
 package com.example.alireza.taskmanager;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 class ExistedUserException extends Exception {
     public ExistedUserException(String message) {
@@ -15,7 +16,7 @@ class UnknownUserException extends Exception {
 }
 
 public class Server {
-    ArrayList<User> users = new ArrayList<>();
+    Vector<User> users = new Vector<>();
 
     public final static boolean isValidEmail(CharSequence target) {
         if (target == null)
