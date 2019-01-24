@@ -74,7 +74,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/clipboards6" />
+        app:srcCompat="@drawable/clipboards6"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView13"

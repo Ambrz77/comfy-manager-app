@@ -1,10 +1,17 @@
 package com.example.alireza.taskmanager;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.Serializable;
+import java.net.Socket;
+import java.net.SocketException;
+import java.util.Scanner;
 import java.util.Vector;
 
 public class User {
-    private String Username,Email,Password;
-    String Name,Familyname;
+    private String Username, Email, Password;
+    String Name, Familyname;
     int Type;//Normal/Silver/Gold user//1/2/3
     boolean loggedIn = false;
     Vector<Task> tasks = new Vector<>();
@@ -98,6 +105,7 @@ public class User {
             input.addAll(mergeT(left, right));
         }
     }
+
     public void mergeSortP(final Vector<Priority> input) {
         if (input.size() != 1) {
             final Vector<Priority> left = new Vector<>();
@@ -115,5 +123,55 @@ public class User {
             mergeSortP(right);
             input.addAll(mergeP(left, right));
         }
+    }
+
+    final static int portNumber = 4343;
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        Socket clientSocket = new Socket("localhost", portNumber);
+        DataOutputStream OutputClient = new DataOutputStream(clientSocket.getOutputStream());
+        DataInputStream InputClient = new DataInputStream(clientSocket.getInputStream());
+        System.out.println("Client Starts!");
+        Thread sendMessage = new Thread(() -> {
+            while (true) {
+                try {
+                    String State, User, Pass, receivedText;
+                    receivedText = scan.nextLine();
+                    String[] token = receivedText.split(" ", -1);
+                    State = token[0];
+                    OutputClient.writeUTF(State);
+                    OutputClient.flush();
+                    User = token[1];
+                    OutputClient.writeUTF(User);
+                    OutputClient.flush();
+                    Pass = token[2];
+                    OutputClient.writeUTF(Pass);
+                    OutputClient.flush();
+                } catch (SocketException s) {
+                    break;
+                } catch (IOException e) {
+                    e.toString();
+                }
+            }
+        });
+        Thread readMessage = new Thread(() -> {
+            while (true) {
+                try {
+
+                    String msg = InputClient.readUTF();
+                    System.out.println(msg);
+                    System.out.println(InputClient.readUTF());
+                    System.out.println(InputClient.readUTF());
+
+                } catch (SocketException s) {
+                    break;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        sendMessage.start();
+        readMessage.start();
     }
 }
