@@ -6,8 +6,9 @@ import java.math.BigInteger;
 public class TmDataSaver implements Serializable {
     private String Username;
     private String Password;
-    private BigInteger Session;
     transient private Thread thread;
+    private BigInteger Session;
+
 
     public TmDataSaver(String Username, String Password, BigInteger Session) {
         this.Username = Username;
