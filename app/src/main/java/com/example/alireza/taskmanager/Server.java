@@ -16,7 +16,7 @@ class UnknownUserException extends Exception {
 }
 
 public class Server {
-    Vector<User> users = new Vector<>();
+    static Vector<User> users = new Vector<>();
 
     public final static boolean isValidEmail(CharSequence target) {
         if (target == null)
@@ -63,7 +63,7 @@ public class Server {
     public boolean login(String ne, String p) {
         if (isUser(ne) > 0) {
             User u = getUser(ne);
-            if (p.equals(u.getPassword())) {
+            if (p.equals(u.getPassword().toString())) {
                 u.loggedIn = true;
                 System.out.println("logged in!");
             } else {

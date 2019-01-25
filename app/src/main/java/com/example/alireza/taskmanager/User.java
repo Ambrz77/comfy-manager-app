@@ -37,7 +37,7 @@ public class User {
         Type = type;
     }
 
-    public User(String username, String email, String password, String name, String familyname, int type) {
+    public User(String username, String email, String name, String password, String familyname, int type) {
         Username = username;
         Email = email;
         Password = password;

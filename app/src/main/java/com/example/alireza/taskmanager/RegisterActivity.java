@@ -16,7 +16,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     Server server=new Server();
     String user,email,name,family,pass;
-    int type=0;
+    int type=1;
     EditText u,e,n,f,p;
 
     TextWatcher textWatcher = new TextWatcher() {
@@ -107,11 +107,11 @@ public class RegisterActivity extends AppCompatActivity {
                 try {
                     if (!(server.isUser(user) == 1 || server.isUser(email) == 2)) {
                         server.Register(user, email, name, pass, family, type);
-                        RegisterError.setText(u+ "Registered!");
+                        //RegisterError.setText(u+ "Registered!");
                         Intent Hintent = new Intent(RegisterActivity.this, HomeActivity.class);
                         startActivity(Hintent);
                     } else {
-                        RegisterError.setText("Wrong data, Please try again!");
+                        //RegisterError.setText("Wrong data, Please try again!");
                         throw new ExistedUserException(u + " is already registered!");
                     }
                 } catch (ExistedUserException e1) {
