@@ -1,6 +1,5 @@
 package com.example.alireza.taskmanager;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +9,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -85,13 +83,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // checkedId is the RadioButton selected
                 switch (checkedId) {
-                    case R.id.NormalButton:
+                    case R.id.Highbtn:
                         type=1;
                         break;
                     case R.id.SilverButton:
                         type=2;
                         break;
-                    case R.id.GoldButton:
+                    case R.id.Lowbtn:
                         type=3;
                         break;
                 }
