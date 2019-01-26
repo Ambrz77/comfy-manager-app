@@ -18,10 +18,10 @@ public class User {
     Vector<Task> tasks = new Vector<>();
     Vector<Priority> priorities = new Vector<>();
 
-    public String[] getPriorityName() {
-        String[] strings = new String[priorities.size()];
+    public ArrayList<String> getPriorityName() {
+        ArrayList<String> strings = new ArrayList<>();
         for (int i = 0; i < priorities.size(); i++) {
-            strings[i]=priorities.get(i).name;
+            strings.add(priorities.get(i).name);
         }
         return strings;
     }
@@ -69,6 +69,9 @@ public class User {
         Name = name;
         Password = password;
         Type = type;
+        priorities.add(new Priority("low",1));
+        priorities.add(new Priority("medium",5));
+        priorities.add(new Priority("high",10));
     }
 
     public User(String username, String email, String name, String password, String familyname, int type) {
@@ -78,6 +81,9 @@ public class User {
         Name = name;
         Familyname = familyname;
         Type = type;
+        priorities.add(new Priority("low",1));
+        priorities.add(new Priority("medium",5));
+        priorities.add(new Priority("high",10));
     }
 
     void newTask(String subject, Priority priority, int year, int month, int day, int hour, int min, String detail) {
