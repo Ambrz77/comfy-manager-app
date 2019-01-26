@@ -107,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
                 try {
                     if (!(server.isUser(user) == 1 || server.isUser(email) == 2)) {
                         server.Register(user, email, name, pass, family, type);
-                        RegisterError.setText(u+ "Registered!");
+                        //RegisterError.setText(u+ "Registered!");
                         Intent Hintent = new Intent(RegisterActivity.this, HomeActivity.class);
                         Hintent.putExtra("user", user);
                         startActivity(Hintent);

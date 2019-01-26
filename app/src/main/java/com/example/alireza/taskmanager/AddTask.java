@@ -35,12 +35,11 @@ public class AddTask extends AppCompatActivity implements TimePickerDialog.OnTim
         DatePick = (Button)findViewById(R.id.DatePick);
         DoneButton = (Button)findViewById(R.id.DoneButton);
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(AddTask.this,
-                android.R.layout.simple_spinner_item,paths);
+       // ArrayAdapter<String>adapter = new ArrayAdapter<String>(AddTask.this,android.R.layout.simple_spinner_item,paths);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       // spinner.setAdapter(adapter);
+        //spinner.setOnItemSelectedListener(this);
 
         DatePick.setOnClickListener(new View.OnClickListener() {
             @Override
