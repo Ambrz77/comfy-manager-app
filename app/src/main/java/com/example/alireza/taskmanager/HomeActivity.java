@@ -40,6 +40,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 Snackbar.make(view, "Enter your task!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 Intent myIntent = new Intent(getApplicationContext(), AddTask.class);
+                myIntent.putExtra("user", user);
                 startActivity(myIntent);
             }
         });
