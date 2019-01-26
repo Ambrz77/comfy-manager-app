@@ -81,12 +81,12 @@ public class AddTask extends AppCompatActivity implements TimePickerDialog.OnTim
         DoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                detail = des.getText().toString();
+                /*detail = des.getText().toString();
                 subject = sub.getText().toString();
                 Task task = new Task(subject,server.getUser(user).getThisPriority(spinner.getSelectedItem().toString()));
                 task.setDetail(detail);
                 task.setTime(yearFinal,monthFinal,dayFinal,hourFinal,minuteFinal);
-                server.getUser(user).tasks.add(task);
+                server.getUser(user).tasks.add(task);*/
                 Intent myIntent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(myIntent);
             }

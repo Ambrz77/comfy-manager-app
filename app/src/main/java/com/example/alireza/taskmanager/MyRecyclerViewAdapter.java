@@ -1,3 +1,4 @@
+/*
 package com.example.alireza.taskmanager;
 
 import android.content.Context;
@@ -72,4 +73,4 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
-}
+}*/
