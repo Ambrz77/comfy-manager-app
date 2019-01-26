@@ -18,8 +18,8 @@
         android:textColor="@android:color/holo_purple"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText" />
+        app:layout_constraintBottom_toTopOf="@+id/pr"
+        app:layout_constraintStart_toStartOf="@+id/pr" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -34,7 +34,7 @@
         app:srcCompat="@drawable/priority" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/pr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="43dp"
