@@ -20,7 +20,7 @@ public class NewPriority extends AppCompatActivity {
     }
     public void SBar(){
         seekBar = (SeekBar)findViewById(R.id.seekBar);
-        textView = (TextView)findViewById(R.id.textView);
+        textView = (TextView)findViewById(R.id.MyMail);
         textView.setText(seekBar.getProgress() + " / " + seekBar.getMax());
 
 

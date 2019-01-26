@@ -17,10 +17,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     String user;
+    TextView t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -28,6 +30,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        /*t1 = (TextView)findViewById(R.id.MyUser);
+        t1.setText(user);*/
 
         Bundle extras = getIntent().getExtras();
         if(extras != null)
@@ -37,6 +42,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Snackbar.make(view, "Enter your task!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 Intent myIntent = new Intent(getApplicationContext(), AddTask.class);
@@ -96,6 +102,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_first_layout) {
             fragmentManager.beginTransaction().replace(R.id.content_frame, new FirstFragment()).commit();
             //Here is the code to Add Priority!
+            Intent NewIntent = new Intent(getApplicationContext(), NewPriority.class);
+            NewIntent.putExtra("user", user);
+            startActivity(NewIntent);
         } else if (id == R.id.nav_second_layout) {
             fragmentManager.beginTransaction().replace(R.id.content_frame, new SecondFragment()).commit();
             //Here is the code to change the password!
