@@ -81,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                     if ((server.isUser(user_email) == 1 || server.isUser(user_email) == 2) && server.login(user_email, password)) {
                         System.out.println(user_email + " logged in!");
                         Intent Lintent = new Intent(LoginActivity.this, HomeActivity.class);
+                        Lintent.putExtra("user", user_email);
                         startActivity(Lintent);
                     } else {
                         throw new UnknownUserException(user_email + " isn't registered!");

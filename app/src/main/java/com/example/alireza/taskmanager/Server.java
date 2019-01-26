@@ -34,9 +34,9 @@ public class Server {
 
     }
 
-    public void AddPriority(User u, String n, int i) { u.priorities.add(new Priority(n, i)); }
+    public void AddPriority(String u, String n, int i) { getUser(u).priorities.add(new Priority(n, i)); }
 
-    public void AddTask(User u, String s, Priority p) { u.tasks.add(new Task(s, p)); }
+    public void AddTask(String u, String s, Priority p) { getUser(u).tasks.add(new Task(s, p)); }
 
     public int isUser(String n) {
         for (User u:users) {

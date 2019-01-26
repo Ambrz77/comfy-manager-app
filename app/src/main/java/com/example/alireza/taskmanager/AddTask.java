@@ -10,8 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -32,6 +34,13 @@ public class AddTask extends AppCompatActivity implements TimePickerDialog.OnTim
         TimePick = (Button)findViewById(R.id.TimePick);
         DatePick = (Button)findViewById(R.id.DatePick);
         DoneButton = (Button)findViewById(R.id.DoneButton);
+        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(AddTask.this,
+                android.R.layout.simple_spinner_item,paths);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
         DatePick.setOnClickListener(new View.OnClickListener() {
             @Override

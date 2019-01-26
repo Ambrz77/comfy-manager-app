@@ -109,6 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                         server.Register(user, email, name, pass, family, type);
                         RegisterError.setText(u+ "Registered!");
                         Intent Hintent = new Intent(RegisterActivity.this, HomeActivity.class);
+                        Hintent.putExtra("user", user);
                         startActivity(Hintent);
                     } else {
                         RegisterError.setText("Wrong data, Please try again!");
