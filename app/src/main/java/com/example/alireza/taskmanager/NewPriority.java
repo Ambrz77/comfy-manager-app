@@ -28,13 +28,6 @@ public class NewPriority extends AppCompatActivity {
         pr = findViewById(R.id.pr);
         btn = findViewById(R.id.button);
         Bundle extras = getIntent().getExtras();
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(getApplicationContext(), HomeActivity.class);
-                startActivity(myIntent);
-            }
-        });
         if(extras != null)
             user = extras.getString("user");
         {
@@ -63,7 +56,14 @@ public class NewPriority extends AppCompatActivity {
                 }
             });
         }
-        server.getUser(user).priorities.add(new Priority(pr.getText().toString(), progress_value));
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                server.getUser(user).priorities.add(new Priority(pr.getText().toString(), progress_value));
+                Intent myIntent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(myIntent);
+            }
+        });
     }
 
 }
