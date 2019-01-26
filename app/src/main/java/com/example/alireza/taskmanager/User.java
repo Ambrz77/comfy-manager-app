@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -21,6 +22,13 @@ public class User {
         String[] strings = new String[priorities.size()];
         for (int i = 0; i < priorities.size(); i++) {
             strings[i]=priorities.get(i).name;
+        }
+        return strings;
+    }
+    public ArrayList<String> getTaskName() {
+        ArrayList<String> strings = new ArrayList<>();
+        for (int i = 0; i < tasks.size(); i++) {
+            strings.add(tasks.get(i).subject);
         }
         return strings;
     }

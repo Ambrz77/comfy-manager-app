@@ -7,6 +7,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,12 +18,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     String user;
+    Server server = new Server();
     TextView t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         /*t1 = (TextView)findViewById(R.id.MyUser);
         t1.setText(user);*/
 
+        RecyclerView recyclerView = findViewById(R.id.RV);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        MyRecyclerViewAdapter a = new MyRecyclerViewAdapter(this, server.getUser(user).getTaskName());
+        recyclerView.setAdapter(a);
         Bundle extras = getIntent().getExtras();
         if(extras != null)
             user = extras.getString("user");
