@@ -1,8 +1,11 @@
 package com.example.alireza.taskmanager;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -13,6 +16,7 @@ public class NewPriority extends AppCompatActivity {
     TextView textView;
     String user;
     EditText pr;
+    Button btn;
     int progress_value;
     Server server = new Server();
 
@@ -22,7 +26,15 @@ public class NewPriority extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_priority);
         pr = findViewById(R.id.pr);
+        btn = findViewById(R.id.button);
         Bundle extras = getIntent().getExtras();
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(myIntent);
+            }
+        });
         if(extras != null)
             user = extras.getString("user");
         {
