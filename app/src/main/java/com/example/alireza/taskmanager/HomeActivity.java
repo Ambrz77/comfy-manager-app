@@ -38,10 +38,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         /*t1 = (TextView)findViewById(R.id.MyUser);
         t1.setText(user);*/
 
-        RecyclerView recyclerView = findViewById(R.id.RV);
+        /*RecyclerView recyclerView = findViewById(R.id.RV);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         MyRecyclerViewAdapter a = new MyRecyclerViewAdapter(this, server.getUser(user).getTaskName());
-        recyclerView.setAdapter(a);
+        recyclerView.setAdapter(a);*/
         Bundle extras = getIntent().getExtras();
         if(extras != null)
             user = extras.getString("user");
@@ -92,6 +92,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
