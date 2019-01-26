@@ -50,7 +50,7 @@ public class Server {
         return 0;
     }
 
-    private User getUser(String n) {
+    public User getUser(String n) {
         for (User u :
                 users) {
             if (u.getEmail().equals(n) || u.getUsername().equals(n)) {

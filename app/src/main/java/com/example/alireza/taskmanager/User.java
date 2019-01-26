@@ -17,6 +17,32 @@ public class User {
     Vector<Task> tasks = new Vector<>();
     Vector<Priority> priorities = new Vector<>();
 
+    public String[] getPriorityName() {
+        String[] strings = new String[priorities.size()];
+        for (int i = 0; i < priorities.size(); i++) {
+            strings[i]=priorities.get(i).name;
+        }
+        return strings;
+    }
+
+    public Priority getThisPriority(String n) {
+        for (Priority p :
+                priorities) {
+            if (p.name.equals(n)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public Vector<Task> getTasks() {
+        return tasks;
+    }
+
+    public Vector<Priority> getPriorities() {
+        return priorities;
+    }
+
     public String getUsername() {
         return Username;
     }
