@@ -1,2 +1,2 @@
-# TaskManager
-"Task Manager" Final Project of AP Course
+# task-manager-app
+"Task Manager" Android application - Final Project of AP Course
