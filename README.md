@@ -1,2 +1,2 @@
-# TaskManager
-"Task Manager" Final Project of AP Course
+# comfy-manager-app
+"Comfy Manager" Android Application - Advanced Programming Final Project
